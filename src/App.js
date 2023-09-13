@@ -12,7 +12,7 @@ function App() {
   }, [dispatch]);
 
   // Get data from Redux store
-  const cryptoData = useSelector((state) => state.crypto.cryptoData);
+  // const cryptoData = useSelector((state) => state.crypto.cryptoData);  // Commented out
   const status = useSelector((state) => state.crypto.status);
 
   // Handle loading and error states
