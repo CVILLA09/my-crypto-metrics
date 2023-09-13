@@ -1,6 +1,5 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-/* eslint-disable import/prefer-default-export */
 
 export const fetchCryptoData = createAsyncThunk(
   'crypto/fetchCryptoData',
@@ -19,3 +18,31 @@ export const fetchCryptoData = createAsyncThunk(
     return response.data;
   },
 );
+
+const initialState = {
+  cryptoData: [],
+  status: 'idle',
+  error: null,
+};
+
+const cryptoSlice = createSlice({
+  name: 'crypto',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchCryptoData.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchCryptoData.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.cryptoData = action.payload;
+      })
+      .addCase(fetchCryptoData.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+  },
+});
+
+export default cryptoSlice.reducer;
