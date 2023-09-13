@@ -11,8 +11,8 @@ export const fetchCryptoData = createAsyncThunk(
 
 export const fetchCryptoDetails = createAsyncThunk(
   'crypto/fetchCryptoDetails',
-  async (asset_id) => {
-    const response = await axios.get(`https://api.coincap.io/v2/assets/${asset_id}`);
+  async (assetId) => {
+    const response = await axios.get(`https://api.coincap.io/v2/assets/${assetId}`);
     return response.data;
   },
 );
