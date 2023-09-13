@@ -12,8 +12,8 @@ const CryptoList = () => {
   return (
     <div>
       {cryptoData && Array.isArray(cryptoData) ? (
-        cryptoData.map((crypto, index) => (
-          <div key={index}>
+        cryptoData.map((crypto) => (
+          <div key={crypto.id}>
             <Link to={`/details/${crypto.id}`}>
               <h3>{crypto.name}</h3>
             </Link>
