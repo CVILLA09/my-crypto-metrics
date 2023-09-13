@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCryptoData } from './redux/cryptoSlice';
-import CryptoList from './components/CryptoList';  // <-- Import the CryptoList component
+import CryptoList from './components/CryptoList';
+import CryptoDetails from './components/CryptoDetails';
 
 function App() {
   const dispatch = useDispatch();
@@ -22,8 +23,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<CryptoList />} />  {/* <-- Use CryptoList as the homepage */}
-        <Route path="/details/:id" element={<div>Detail Page Placeholder</div>} />
+        <Route path="/" element={<CryptoList />} />
+        <Route path="/details/:id" element={<CryptoDetails />} />
       </Routes>
     </Router>
   );
