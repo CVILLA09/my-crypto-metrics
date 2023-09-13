@@ -19,12 +19,12 @@ const CryptoDetails = () => {
       <p>Symbol: {details ? details.symbol : 'Loading...'}</p>
       <p>
         Price (USD):
-        {details ? (typeof details.rateUsd === 'number' ? details.rateUsd.toFixed(2) : parseFloat(details.rateUsd).toFixed(2)) : 'Loading...'}
+        {details ? (typeof details.priceUsd === 'number' ? details.priceUsd.toFixed(2) : parseFloat(details.priceUsd).toFixed(2)) : 'Loading...'}
       </p>
       <p>Rank: {details ? details.rank : 'Loading...'}</p>
-      <p>Market Cap (USD): {details ? details.marketCapUsd : 'Loading...'}</p>
-      <p>24hr Volume (USD): {details ? details.volumeUsd24Hr : 'Loading...'}</p>
-      </div>
+      <p>Market Cap (USD): {details ? parseFloat(details.marketCapUsd).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : 'Loading...'}</p>
+      <p>24hr Volume (USD): {details ? parseFloat(details.volumeUsd24Hr).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : 'Loading...'}</p>
+    </div>
   );
 };
 
