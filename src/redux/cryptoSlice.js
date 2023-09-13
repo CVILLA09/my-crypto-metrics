@@ -9,8 +9,17 @@ export const fetchCryptoData = createAsyncThunk(
   },
 );
 
+export const fetchCryptoDetails = createAsyncThunk(
+  'crypto/fetchCryptoDetails',
+  async (asset_id) => {
+    const response = await axios.get(`https://api.coincap.io/v2/assets/${asset_id}`);
+    return response.data;
+  },
+);
+
 const initialState = {
   cryptoData: [],
+  selectedDetails: null,
   status: 'idle',
   error: null,
 };
@@ -31,6 +40,9 @@ const cryptoSlice = createSlice({
       .addCase(fetchCryptoData.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+      })
+      .addCase(fetchCryptoDetails.fulfilled, (state, action) => {
+        state.selectedDetails = action.payload.data;
       });
   },
 });
