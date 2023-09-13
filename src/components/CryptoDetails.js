@@ -23,7 +23,8 @@ const CryptoDetails = () => {
       </p>
       <p>Rank: {details ? details.rank : 'Loading...'}</p>
       <p>Market Cap (USD): {details ? details.marketCapUsd : 'Loading...'}</p>
-      <p>24hr Volume (USD): {details ? details.volumeUsd24Hr : 'Loading...'}</p}</div>
+      <p>24hr Volume (USD): {details ? details.volumeUsd24Hr : 'Loading...'}</p>
+      </div>
   );
 };
 
