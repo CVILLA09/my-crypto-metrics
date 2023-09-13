@@ -6,8 +6,6 @@ const CryptoList = () => {
   const cryptoData = useSelector((state) => state.crypto.cryptoData.data);
   const status = useSelector((state) => state.crypto.status);
 
-  console.log("Crypto Data:", cryptoData);
-
   if (status === 'loading') return <p>Loading...</p>;
   if (status === 'failed') return <p>Error fetching data.</p>;
 
@@ -19,8 +17,14 @@ const CryptoList = () => {
             <Link to={`/details/${crypto.id}`}>
               <h3>{crypto.name}</h3>
             </Link>
-            <p>Symbol: {crypto.symbol}</p>
-            <p>Price (USD): {typeof crypto.priceUsd === 'number' ? crypto.priceUsd.toFixed(2) : parseFloat(crypto.priceUsd).toFixed(2)}</p>
+            <p>
+              Symbol:
+              {crypto.symbol}
+            </p>
+            <p>
+              Price (USD):
+              {typeof crypto.priceUsd === 'number' ? crypto.priceUsd.toFixed(2) : parseFloat(crypto.priceUsd).toFixed(2)}
+            </p>
           </div>
         ))
       ) : (

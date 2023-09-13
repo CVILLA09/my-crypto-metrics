@@ -7,7 +7,7 @@ import CryptoDetails from './components/CryptoDetails';
 
 function App() {
   const dispatch = useDispatch();
-  
+
   // Fetch data when the component mounts
   useEffect(() => {
     dispatch(fetchCryptoData());
