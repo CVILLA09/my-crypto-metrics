@@ -1,30 +1,29 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { fetchCryptoDetails } from '../redux/cryptoSlice';
 
 const CryptoDetails = () => {
+  const dispatch = useDispatch();
+  const { id } = useParams();
   const details = useSelector((state) => state.crypto.selectedDetails);
+
+  useEffect(() => {
+    dispatch(fetchCryptoDetails(id));
+  }, [dispatch, id]);
 
   return (
     <div className="cryptoDetail">
       <h2>Crypto Detail</h2>
-      <h3>{details.name}</h3>
+      <h3>{details ? details.name : 'Loading...'}</h3>
+      <p>Symbol: {details ? details.symbol : 'Loading...'}</p>
       <p>
-        Symbol: {details.symbol}
+        Price (USD):
+        {details ? (typeof details.rateUsd === 'number' ? details.rateUsd.toFixed(2) : parseFloat(details.rateUsd).toFixed(2)) : 'Loading...'}
       </p>
-      <p>
-        Price (USD): 
-        {typeof details.rateUsd === 'number' ? details.rateUsd.toFixed(2) : parseFloat(details.rateUsd).toFixed(2)}
-      </p>
-      <p>
-        Rank: {details.rank}
-      </p>
-      <p>
-        Market Cap (USD): {details.marketCapUsd}
-      </p>
-      <p>
-        24hr Volume (USD): {details.volumeUsd24Hr}
-      </p>
-    </div>
+      <p>Rank: {details ? details.rank : 'Loading...'}</p>
+      <p>Market Cap (USD): {details ? details.marketCapUsd : 'Loading...'}</p>
+      <p>24hr Volume (USD): {details ? details.volumeUsd24Hr : 'Loading...'}</p}</div>
   );
 };
 
