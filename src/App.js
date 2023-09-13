@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCryptoData } from './redux/cryptoSlice';
+import CryptoList from './components/CryptoList';  // <-- Import the CryptoList component
 
 function App() {
   const dispatch = useDispatch();
@@ -11,8 +12,7 @@ function App() {
     dispatch(fetchCryptoData());
   }, [dispatch]);
 
-  // Get data from Redux store
-  // const cryptoData = useSelector((state) => state.crypto.cryptoData);  // Commented out
+  // Get status from Redux store
   const status = useSelector((state) => state.crypto.status);
 
   // Handle loading and error states
@@ -22,7 +22,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<div>Home Page Placeholder</div>} />
+        <Route path="/" element={<CryptoList />} />  {/* <-- Use CryptoList as the homepage */}
         <Route path="/details/:id" element={<div>Detail Page Placeholder</div>} />
       </Routes>
     </Router>
