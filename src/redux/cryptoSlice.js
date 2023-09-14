@@ -29,9 +29,18 @@ export const filterCryptos = createAsyncThunk(
   },
 );
 
+export const fetchCryptoHistoricalData = createAsyncThunk(
+  'crypto/fetchCryptoHistoricalData',
+  async (assetId) => {
+    const response = await axios.get(`https://api.coincap.io/v2/assets/${assetId}/history?interval=d1`);
+    return response.data;
+  },
+);
+
 const initialState = {
   cryptoData: [],
   selectedDetails: null,
+  historicalData: [],
   status: 'idle',
   error: null,
 };
@@ -66,6 +75,9 @@ const cryptoSlice = createSlice({
       .addCase(filterCryptos.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload;
+      })
+      .addCase(fetchCryptoHistoricalData.fulfilled, (state, action) => {
+        state.historicalData = action.payload.data;
       });
   },
 });
