@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Line } from 'react-chartjs-2';
@@ -15,14 +15,22 @@ const CryptoDetails = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const details = useSelector((state) => state.crypto.selectedDetails);
+  const historicalData = useSelector((state) => state.crypto.historicalData);
+  const chartRef = useRef(null);
 
   useEffect(() => {
     dispatch(fetchCryptoDetails(id));
     dispatch(fetchCryptoHistoricalData(id));
-    console.log(historicalData);
-  }, [dispatch, id]);
+    console.log('Historical Data:', historicalData);
 
-  const historicalData = useSelector((state) => state.crypto.historicalData);
+    // Destroy chart instance when component unmounts
+    return () => {
+      const chartInstance = chartRef.current;
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+    };
+  }, [dispatch, id]);
 
   const data = {
     labels: historicalData.map((entry) => new Date(entry.date).toLocaleDateString()),
@@ -39,7 +47,7 @@ const CryptoDetails = () => {
 
   return (
     <div className="cryptoDetail">
-      <Line data={data} />
+      <Line data={data} ref={chartRef} />
       <h2>Crypto Detail</h2>
       <h3>{details ? details.name : 'Loading...'}</h3>
       <p>
