@@ -1,0 +1,25 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #4369B2;
+    color: white;
+  }
+  
+  .left-arrow {
+    font-size: 1.5rem;
+  }
+  
+  .navbar-title {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-icons {
+    font-size: 1.2rem;
+  }
+  
+  .mic-icon, .gear-icon {
+    margin-left: 10px;
+  }
+  
