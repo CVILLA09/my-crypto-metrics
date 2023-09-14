@@ -48,17 +48,18 @@ const CryptoList = () => {
                 backgroundColor: ((Math.floor(index / 2) + index) % 2 === 0) ? '#4369B2' : '#3B5D9F',
               }}
             >
-              <Link to={`/details/${crypto.id}`}>
-                <h3>{crypto.name}</h3>
+              <Link to={`/details/${crypto.id}`} className="no-underline">
+                <h1>{crypto.symbol}</h1>
               </Link>
-              <p>
-                Symbol:
-                {crypto.symbol}
-              </p>
-              <p>
-                Price (USD):
-                {typeof crypto.priceUsd === 'number' ? crypto.priceUsd.toFixed(2) : parseFloat(crypto.priceUsd).toFixed(2)}
-              </p>
+              <h2>
+                {crypto.name}
+              </h2>
+              <h3>
+                $
+                {typeof crypto.priceUsd === 'number'
+                  ? crypto.priceUsd.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                  : parseFloat(crypto.priceUsd).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+              </h3>
             </div>
           ))
         ) : (
