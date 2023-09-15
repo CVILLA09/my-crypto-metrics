@@ -55,6 +55,7 @@
     font-size: 4rem;
     font-weight: 200;
     letter-spacing: 0.05em; 
+    cursor: pointer;
   }
   
   .coinCard h2 {
