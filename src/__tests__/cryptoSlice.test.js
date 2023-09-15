@@ -1,6 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { act } from 'react-dom/test-utils';
-import cryptoReducer, { fetchCryptoData } from '../redux/cryptoSlice';
+import cryptoReducer, {
+  fetchCryptoData,
+  fetchCryptoDetails,
+  filterCryptos,
+  fetchCryptoHistoricalData,
+} from '../redux/cryptoSlice';
 
 const axios = require('axios');
 
@@ -9,7 +14,6 @@ jest.mock('axios');
 describe('Crypto Slice', () => {
   let store;
 
-  // Define the initial state
   const initialState = {
     cryptoData: [],
     selectedDetails: null,
@@ -19,30 +23,24 @@ describe('Crypto Slice', () => {
   };
 
   beforeEach(() => {
-    // Configure the store before each test
     store = configureStore({ reducer: { crypto: cryptoReducer } });
   });
 
-  // Test case to check if the initial state is handled correctly
   it('should handle initial state', () => {
     expect(cryptoReducer(undefined, {})).toEqual(initialState);
   });
 
-  // Nested describe block for testing fetchCryptoData async thunk action
   describe('fetchCryptoData Async Thunk', () => {
-    // Test case to check if the action handles pending, fulfilled, and rejected states
     it('handles pending, fulfilled and rejected', async () => {
       const mockData = { data: 'some-mock-data' };
       const mockError = { message: 'some-mock-error' };
 
-      // Test for pending state
       act(() => {
         store.dispatch(fetchCryptoData());
       });
       let state = store.getState();
       expect(state.crypto.status).toBe('loading');
 
-      // Test for fulfilled state
       axios.get.mockResolvedValueOnce(mockData);
       await act(async () => {
         await store.dispatch(fetchCryptoData());
@@ -51,7 +49,6 @@ describe('Crypto Slice', () => {
       expect(state.crypto.status).toBe('succeeded');
       expect(state.crypto.cryptoData).toEqual(mockData.data);
 
-      // Test for rejected state
       axios.get.mockRejectedValueOnce(mockError);
       await act(async () => {
         await store.dispatch(fetchCryptoData());
@@ -62,6 +59,46 @@ describe('Crypto Slice', () => {
     });
   });
 
-  // TODO: Write tests for other async actions
-  // TODO: Write tests for state management
+  describe('fetchCryptoDetails Async Thunk', () => {
+    it('handles fulfilled state', async () => {
+      const mockData = { data: 'some-details-data' };
+      axios.get.mockResolvedValueOnce({ data: mockData });
+
+      await act(async () => {
+        await store.dispatch(fetchCryptoDetails('some-asset-id'));
+      });
+
+      const state = store.getState();
+      expect(state.crypto.selectedDetails).toEqual(mockData);
+    });
+  });
+
+  describe('filterCryptos Async Thunk', () => {
+    it('handles pending, fulfilled and rejected', async () => {
+      const mockData = { data: 'some-filtered-data' };
+      const mockError = { response: { data: 'some-mock-error' } };
+
+      axios.get.mockRejectedValueOnce(mockError);
+
+      await act(async () => {
+        await store.dispatch(filterCryptos('query'));
+      });
+      const state = store.getState();
+      expect(state.crypto.error).toEqual(mockError.response.data);
+    });
+  });
+
+  describe('fetchCryptoHistoricalData Async Thunk', () => {
+    it('handles fulfilled state', async () => {
+      const mockData = { data: 'some-historical-data' };
+      axios.get.mockResolvedValueOnce({ data: mockData });
+
+      await act(async () => {
+        await store.dispatch(fetchCryptoHistoricalData('some-asset-id'));
+      });
+
+      const state = store.getState();
+      expect(state.crypto.historicalData).toEqual(mockData.data);
+    });
+  });
 });
