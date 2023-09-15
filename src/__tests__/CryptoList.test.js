@@ -54,5 +54,48 @@ describe('CryptoList Component', () => {
     expect(screen.getByText('Error fetching data.')).toBeInTheDocument();
   });
 
-  // Additional tests can follow here
+  it('renders succeeded state with crypto data', () => {
+    const mockCryptoData = [
+      {
+        id: '1',
+        symbol: 'BTC',
+        name: 'Bitcoin',
+        priceUsd: '50000',
+      },
+      {
+        id: '2',
+        symbol: 'ETH',
+        name: 'Ethereum',
+        priceUsd: '3000',
+      },
+    ];
+
+    const initialState = {
+      crypto: {
+        cryptoData: { data: mockCryptoData },
+        status: 'succeeded',
+        error: null,
+      },
+      detail: {},
+    };
+
+    const store = mockStore(initialState);
+
+    render(
+      <Provider store={store}>
+        <Router>
+          <CryptoList />
+        </Router>
+      </Provider>,
+    );
+
+    // Validate if the crypto data is rendered correctly
+    expect(screen.getByText('BTC')).toBeInTheDocument();
+    expect(screen.getByText('Bitcoin')).toBeInTheDocument();
+    expect(screen.getByText('$50,000.00')).toBeInTheDocument();
+
+    expect(screen.getByText('ETH')).toBeInTheDocument();
+    expect(screen.getByText('Ethereum')).toBeInTheDocument();
+    expect(screen.getByText('$3,000.00')).toBeInTheDocument();
+  });
 });
