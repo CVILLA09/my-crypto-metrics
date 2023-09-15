@@ -21,9 +21,7 @@ const CryptoDetails = () => {
   useEffect(() => {
     dispatch(fetchCryptoDetails(id));
     dispatch(fetchCryptoHistoricalData(id));
-    console.log('Historical Data:', historicalData);
 
-    // Destroy chart instance when component unmounts
     return () => {
       const chartInstance = chartRef.current;
       if (chartInstance) {
@@ -47,7 +45,7 @@ const CryptoDetails = () => {
 
   return (
     <div className="cryptoDetail">
-      <Line data={data} ref={chartRef} />
+      {historicalData.length > 0 ? <Line data={data} ref={chartRef} /> : 'Loading Chart...'}
       <h2>Crypto Detail</h2>
       <h3>{details ? details.name : 'Loading...'}</h3>
       <p>
