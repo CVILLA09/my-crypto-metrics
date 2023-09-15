@@ -61,8 +61,8 @@ describe('Crypto Slice', () => {
 
   describe('fetchCryptoDetails Async Thunk', () => {
     it('handles fulfilled state', async () => {
-      const mockData = { data: 'some-details-data' };
-      axios.get.mockResolvedValueOnce({ data: mockData });
+      const mockData = 'some-details-data';
+      axios.get.mockResolvedValueOnce({ data: { data: mockData } });
 
       await act(async () => {
         await store.dispatch(fetchCryptoDetails('some-asset-id'));
@@ -75,7 +75,6 @@ describe('Crypto Slice', () => {
 
   describe('filterCryptos Async Thunk', () => {
     it('handles pending, fulfilled and rejected', async () => {
-      const mockData = { data: 'some-filtered-data' };
       const mockError = { response: { data: 'some-mock-error' } };
 
       axios.get.mockRejectedValueOnce(mockError);

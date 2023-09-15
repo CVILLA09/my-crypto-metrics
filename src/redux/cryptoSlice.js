@@ -63,7 +63,7 @@ const cryptoSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(fetchCryptoDetails.fulfilled, (state, action) => {
-        state.selectedDetails = action.payload;
+        state.selectedDetails = action.payload.data;
       })
       .addCase(filterCryptos.pending, (state) => {
         state.status = 'loading';
