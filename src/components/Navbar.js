@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { clearSelectedDetails } from '../redux/detailSlice';
+import { fetchCryptoData } from '../redux/cryptoSlice';
 import 'font-awesome/css/font-awesome.min.css';
 import './Navbar.css';
 
@@ -10,6 +11,7 @@ const Navbar = () => {
 
   const handleGoBack = () => {
     dispatch(clearSelectedDetails());
+    dispatch(fetchCryptoData());
   };
 
   return (
