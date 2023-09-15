@@ -1,16 +1,14 @@
-process.env.NODE_ENV = 'test';
-
 import { configureStore } from '@reduxjs/toolkit';
 import { act } from 'react-dom/test-utils';
-import axios from 'axios';
 import cryptoReducer, { fetchCryptoData } from '../redux/cryptoSlice';
 
-// Mocking axios
+const axios = require('axios');
+
 jest.mock('axios');
 
 describe('Crypto Slice', () => {
   let store;
-  
+
   // Define the initial state
   const initialState = {
     cryptoData: [],
@@ -32,19 +30,18 @@ describe('Crypto Slice', () => {
 
   // Nested describe block for testing fetchCryptoData async thunk action
   describe('fetchCryptoData Async Thunk', () => {
-    
     // Test case to check if the action handles pending, fulfilled, and rejected states
     it('handles pending, fulfilled and rejected', async () => {
       const mockData = { data: 'some-mock-data' };
       const mockError = { message: 'some-mock-error' };
-      
+
       // Test for pending state
       act(() => {
         store.dispatch(fetchCryptoData());
       });
       let state = store.getState();
       expect(state.crypto.status).toBe('loading');
-      
+
       // Test for fulfilled state
       axios.get.mockResolvedValueOnce(mockData);
       await act(async () => {
@@ -52,8 +49,8 @@ describe('Crypto Slice', () => {
       });
       state = store.getState();
       expect(state.crypto.status).toBe('succeeded');
-      expect(state.crypto.cryptoData).toEqual(mockData);
-      
+      expect(state.crypto.cryptoData).toEqual(mockData.data);
+
       // Test for rejected state
       axios.get.mockRejectedValueOnce(mockError);
       await act(async () => {
