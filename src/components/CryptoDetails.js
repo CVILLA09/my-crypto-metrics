@@ -5,13 +5,6 @@ import { Line } from 'react-chartjs-2';
 import { fetchCryptoDetails, fetchCryptoHistoricalData } from '../redux/cryptoSlice';
 import './CryptoDetails.css';
 
-const formatPrice = (price) => {
-  if (typeof price === 'number') {
-    return price.toFixed(2);
-  }
-  return parseFloat(price).toFixed(2);
-};
-
 const CryptoDetails = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -23,10 +16,12 @@ const CryptoDetails = () => {
     dispatch(fetchCryptoDetails(id));
     dispatch(fetchCryptoHistoricalData(id));
 
+    // Capture the current value of chartRef
+    const currentChartRef = chartRef.current;
+
     return () => {
-      const chartInstance = chartRef.current;
-      if (chartInstance) {
-        chartInstance.destroy();
+      if (currentChartRef) {
+        currentChartRef.destroy();
       }
     };
   }, [dispatch, id]);
