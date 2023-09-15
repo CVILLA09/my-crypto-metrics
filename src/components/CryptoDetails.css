@@ -1,45 +1,45 @@
 .chartWrapper {
-    width: 95%;
-    margin: auto;
-    padding: 2.5%;
-  }
-  
-  .cryptoDetail {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', sans-serif;
-    font-size: 1.8rem;
-  }
+  width: 95%;
+  margin: auto;
+  padding: 2.5%;
+}
 
-  .cryptoDetail h3 {
-    background-color: #4369B2;
-  }
+.cryptoDetail {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', sans-serif;
+  font-size: 1.8rem;
+}
 
-  .cryptoDetail h3, .cryptoDetail p {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    padding: 1.8% 3%;
-    margin: 0;
-    border: solid 1px #fff;
-    letter-spacing: 0.05em; 
-  }  
-  
-  .cryptoDetail p:nth-child(even) {
-    background-color: #4369B2;
-  }
-  
-  .cryptoDetail p:nth-child(odd) {
-    background-color: #3B5D9F;
-  }
-  
-  strong {
-    font-weight: bold;
-  }
-  
-  span {
-    font-weight: lighter;
-  }
-  
+.cryptoDetail h3 {
+  background-color: #4369b2;
+}
+
+.cryptoDetail h3,
+.cryptoDetail p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding: 1.8% 3%;
+  margin: 0;
+  border: solid 1px #fff;
+  letter-spacing: 0.05em;
+}
+
+.cryptoDetail p:nth-child(even) {
+  background-color: #4369b2;
+}
+
+.cryptoDetail p:nth-child(odd) {
+  background-color: #3b5d9f;
+}
+
+strong {
+  font-weight: bold;
+}
+
+span {
+  font-weight: lighter;
+}
