@@ -23,6 +23,8 @@ const CryptoList = () => {
   if (status === 'loading') return <p>Loading...</p>;
   if (status === 'failed') return <p>Error fetching data.</p>;
 
+  console.log(cryptoData);
+
   return (
     <div>
       <div className="searchContainer">
