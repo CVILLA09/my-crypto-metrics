@@ -6,16 +6,11 @@
   background-color: #4369b2;
   color: #fff;
   border: solid 1px #fff;
-}
-
-.left-arrow,
-.navbar-title,
-.navbar-icons {
-  flex: 1;
   text-align: center;
 }
 
 .navbar-title {
+  flex: 1; 
   font-family: 'Gill Sans', 'Lato', sans-serif;
   font-size: large;
   font-weight: 300;
@@ -25,6 +20,8 @@
 .left-arrow {
   text-align: left;
   margin-left: 20px;
+  cursor: pointer;
+  color: #fff;
 }
 
 .navbar-icons {
