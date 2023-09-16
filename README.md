@@ -6,7 +6,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://media3.giphy.com/media/iYTXFJofI7I987H92k/giphy-downsized-medium.gif" alt="readme-gif" width="700" style="display: inline-block;">
+  <img src="https://media3.giphy.com/media/iYTXFJofI7I987H92k/giphy-downsized-medium.gif" alt="readme-gif" width="500" style="display: inline-block;">
 </div>
 
 <br/>
