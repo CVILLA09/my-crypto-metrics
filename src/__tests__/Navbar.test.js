@@ -40,7 +40,7 @@ describe('<Navbar />', () => {
         <MemoryRouter>
           <Navbar />
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByText('my crypto metrics')).toBeInTheDocument();
@@ -53,7 +53,7 @@ describe('<Navbar />', () => {
         <MemoryRouter>
           <Navbar />
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
 
     fireEvent.click(screen.getByRole('link'));
