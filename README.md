@@ -93,7 +93,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[TThe project is deployed and accessible online here.]()
+[TThe project is deployed and accessible online here.](https://develop--my-crypto-metrics.netlify.app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
