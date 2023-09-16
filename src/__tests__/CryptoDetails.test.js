@@ -86,7 +86,7 @@ describe('<CryptoDetails />', () => {
   });
 
   it('handles fetchCryptoDetails failure', async () => {
-    fetchCryptoDetails.mockRejectedValue(new Error('An error occurred'));
+    fetchCryptoDetails.mockRejectedValue(new Error('Custom error message'));
 
     render(
       <Provider store={store}>
