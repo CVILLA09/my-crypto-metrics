@@ -1,70 +1,234 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
+<div align="center">
+ <h1><b> Welcome To Your New Crypto Data Hub! <br/></b></h1>
+</div>  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br/>
 
-## Available Scripts
+<div align="center">
+  <img src="https://media3.giphy.com/media/iYTXFJofI7I987H92k/giphy-downsized-medium.gif" alt="readme-gif" width="700" style="display: inline-block;">
+</div>
 
-In the project directory, you can run:
+<br/>
 
-### `npm start`
+<div align="center">
+  <h1 style="border-bottom: none;">🚀 My Crypto Metrics 🚀</h1>
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!-- TABLE OF CONTENTS -->
 
-### `npm test`
+# 📗 Table of Contents
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [📗 Table of Contents](#-table-of-contents)
+- [👀 Preview](#preview)
+- [📈 My-Crypto-Metrics ](#-space-travelers-hub-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
-### `npm run build`
+<br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Preview 👀 <a name="preview"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Preview of My Crypto Metrics](https://github.com/kazim110/SpaceTraveler/blob/feature/tests/src/assets/SpaceTravelerPreview.gif?raw=true)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br/>
 
-### `npm run eject`
+<!-- PROJECT DESCRIPTION -->
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# 🚀 My Crypto Metrics <a name="about-project"></a>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**My Crypto Metrics** is a web application that provides comprehensive cryptocurrency data. The application allows users to explore a list of cryptocurrencies and view detailed metrics about each.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br/>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🛠 Built With <a name="built-with"></a>
 
-## Learn More
+### Tech Stack <a name="tech-stack"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/">JavaScript</a></li>
+    <li><a href="https://styled-components.com">Styled-components</a></li>
+    <li><a href="https://nodejs.org/en/">Node.js</a></li>
+  </ul>
+</details>
 
-### Code Splitting
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!-- Features -->
 
-### Analyzing the Bundle Size
+## Key Features <a name="key-features"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **Real-Time Data Integration**: The app integrates data from a reliable cryptocurrency API, offering real-time information on a range of cryptocurrencies.
 
-### Making a Progressive Web App
+2. **Detailed Metrics**: Explore comprehensive metrics for each cryptocurrency, including market cap, volume, supply data, and more.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. **Intuitive User Interface**: Navigate the application effortlessly with an intuitive design, including features like a "Back" button for enhanced navigation.
 
-### Advanced Configuration
+4. **Responsive Design**:  The app is fully responsive, offering a seamless experience on both desktop and mobile devices.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<!-- LIVE DEMO -->
 
-### `npm run build` fails to minify
+## 🚀 Live Demo <a name="live-demo"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[TThe project is deployed and accessible online here.]()
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps:
+
+- Clone this repo as described in the setup section. 
+- Make modifications as preferred
+
+### Prerequisites
+
+In order to run this project you need: To clone or fork and run it in a browser
+
+### Setup
+
+Clone this repository to your desired folder:
+
+Example commands:
+
+```sh
+  cd my-folder
+  git clone https://github.com/CVILLA09/my-crypto-metrics.git
+```
+
+using Ubuntu:
+
+```sh
+  cd my-desired-folder
+  git clone https://github.com/CVILLA09/my-crypto-metrics.git
+```
+
+For more information on how to clone or fork a repository:
+- <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">How to clone a repo</a>
+- <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">How to fork a repo</a>
+
+### Install
+
+- Run ` npm install `
+
+### Usage
+
+To run the project, execute the following command:
+
+- Run `npm start`
+
+### Run tests
+
+To run tests, run the following command:
+
+- to test validation errors `npx hint .`
+
+- to test CSS linter errors `npx stylelint "**/*.{css,scss}"`
+
+- to test JavaScript linter errors  `npx eslint .`
+
+- to run the jest tests `npx test`
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Cristian Villa**
+
+- GitHub: [@cvilla09](https://github.com/CVILLA09)
+- LinkedIn: [Cristian Villa](https://www.linkedin.com/in/cristian-villa-5b518127b/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+1. **Additional Metrics:** Add more detailed metrics like historical data charts for each cryptocurrency.
+
+2. **User Accounts:**  Introduce user account functionality for personalized tracking of favorite cryptocurrencies.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/kazim110/SpaceTraveler/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+Thanks to all <img src="https://assets-global.website-files.com/5dbb30f00775d4c32191a4df/61b33c641028e40f097ca160_microverse-nav-logo-170.png" width="108" height="18"> community.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FAQ (optional) -->
+
+## ❓ FAQ (Frequently Asked Questions) <a name="faq"></a>
+
+> We know you're as curious as a cat about cryptocurrencies! Let's dive into some fun FAQs!
+
+- **Q: Do I need to be a Wall Street expert to understand these metrics? ** 📈💼
+
+  - A: Absolutely not! Our interface is designed to be user-friendly. Whether you're a day-trader or it's your first time hearing about crypto, you're welcome here! 🌍
+
+- **Q: Can I use this data to become the next crypto millionaire? 💰**
+
+  - A:While we provide accurate and up-to-date data, remember that all investments come with risks. So, no promises, but who knows? You could be the next crypto mogul! 🚀🌕
+
+- **Q: Will using My Crypto Metrics make me a blockchain expert? 📊**
+
+  - A: We can't guarantee you'll become an expert, but you'll definitely become more knowledgeable! Our detailed metrics can provide valuable insights into the crypto world. 🤓
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
