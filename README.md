@@ -45,7 +45,7 @@
 
 # Preview 👀 <a name="preview"></a>
 
-![Preview of My Crypto Metrics](https://github.com/kazim110/SpaceTraveler/blob/feature/tests/src/assets/SpaceTravelerPreview.gif?raw=true)
+![Preview of My Crypto Metrics](https://github.com/CVILLA09/my-crypto-metrics/blob/develop/assets/Preview.gif?raw=true)
 
 <br/>
 
