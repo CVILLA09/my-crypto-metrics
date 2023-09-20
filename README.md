@@ -95,7 +95,7 @@
 
 [The project is deployed and accessible online here.](https://develop--my-crypto-metrics.netlify.app)
 
-[Here you can find the video walkthrough as well!](https://drive.google.com/file/d/1MnF5m9JG-LeDCVzNZxD1bgQeBBSwl5Jv/view?usp=sharing)
+[Here you can find the video walkthrough as well!]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
